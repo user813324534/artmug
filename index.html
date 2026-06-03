@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MARONG ORIGINAL</title>
+
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:Pretendard,"Noto Sans KR",Arial,sans-serif;
+  background:#fff;
+  color:#222;
+}
+.wrap{
+  max-width:980px;
+  margin:0 auto;
+  padding:24px 20px 60px;
+}
+.hero{
+  width:100%;
+  margin:0 0 24px;
+  text-align:center;
+  padding:46px 20px 42px;
+  background:#fff;
+  border:1px solid #e6ca45;
+  border-radius:28px;
+}
+.badge{
+  display:inline-block;
+  padding:7px 22px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid #e6ca45;
+  color:#9a7b00;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+.hero h1{
+  margin:18px 0 10px;
+  font-size:46px;
+  letter-spacing:-1px;
+}
+.hero p{
+  margin:0;
+  color:#6f641f;
+  line-height:1.8;
+}
+.portfolio{
+  border:1px solid #e6ca45;
+  border-radius:28px;
+  background:#fff;
+  padding:28px;
+}
+.title{
+  font-size:24px;
+  font-weight:900;
+  margin-bottom:18px;
+}
+.title:before{
+  content:"";
+  display:inline-block;
+  width:5px;
+  height:22px;
+  background:#e6ca45;
+  border-radius:99px;
+  margin-right:10px;
+  vertical-align:-4px;
+}
+.tabs{
+  white-space:nowrap;
+  overflow-x:auto;
+  padding-bottom:12px;
+  margin-bottom:18px;
+}
+.tabs button{
+  display:inline-block;
+  margin:4px;
+  padding:9px 22px;
+  border:1px solid #e6ca45;
+  border-radius:999px;
+  background:#fff;
+  color:#8a7728;
+  font-weight:900;
+  cursor:pointer;
+}
+.tabs button.active{
+  background:#e6ca45;
+  color:white;
+}
+.work-info{
+  margin-bottom:16px;
+  padding:15px 18px;
+  border:1px dashed #e6ca45;
+  border-radius:18px;
+  background:#fff;
+  color:#555;
+  line-height:1.8;
+}
+.gallery{
+  overflow-x:auto;
+  white-space:nowrap;
+  padding:4px 0 20px;
+}
+.item{
+  display:inline-block;
+  width:360px;
+  margin-right:18px;
+  border:1px solid #e6ca45;
+  border-radius:22px;
+  overflow:hidden;
+  background:white;
+  vertical-align:top;
+}
+.item-head{
+  padding:12px 16px;
+  background:#fff;
+  color:#8a7728;
+  font-weight:900;
+  border-bottom:1px solid #e6ca45;
+}
+.imgbox{
+  width:100%;
+  height:360px;
+  background:#fff;
+  overflow:hidden;
+}
+.imgbox img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+.caption{
+  padding:12px;
+  text-align:center;
+  color:#777;
+  font-weight:800;
+  border-top:1px solid #f1e5a5;
+}
+.notice{
+  margin-top:24px;
+  border:1px solid #e6ca45;
+  border-radius:24px;
+  background:white;
+  padding:26px;
+  line-height:2;
+  color:#555;
+}
+.footer{
+  margin-top:24px;
+  text-align:center;
+  background:#fff;
+  color:#222;
+  border:1px solid #e6ca45;
+  border-radius:24px;
+  padding:38px 20px;
+}
+.footer h2{margin:0 0 8px}
+.footer p{margin:0;color:#666}
+
+@media(max-width:700px){
+  .hero h1{font-size:34px}
+  .portfolio{padding:20px}
+  .item{width:320px}
+  .imgbox{height:320px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">MARONG ORIGINAL</div>
+    <h1>개인작 아바타 판매</h1>
+    <p>작품을 선택한 뒤, 아래 박스 안에서 좌우로 넘겨 전체 이미지를 확인해주세요.</p>
+  </div>
+
+  <div class="portfolio">
+    <div class="title">포트폴리오</div>
+
+    <div class="tabs" id="tabs"></div>
+
+    <div class="work-info" id="workInfo"></div>
+
+    <div class="gallery" id="gallery"></div>
+  </div>
+
+  <div class="notice">
+    1. 본 상품은 개인작 완성품 판매입니다.<br>
+    2. 구매 전 작품 번호와 이미지를 반드시 확인해주세요.<br>
+    3. GIF / JPG / PNG 이미지 모두 사용 가능합니다.<br>
+    4. 디지털 상품 특성상 다운로드 후 환불이 어렵습니다.<br>
+    5. 파일의 무단 공유, 재배포, 재판매를 금지합니다.
+  </div>
+
+  <div class="footer">
+    <h2>Thank you!</h2>
+    <p>원하는 작품 번호를 확인 후 구매해주세요.</p>
+  </div>
+
+</div>
+
+<script>
+const works = [
+  {
+    title:"작품 1",
+    head:"밀티나",
+    body:"시나노",
+    mood:"러블리 / 노랑 / 데일리",
+    images:[
+      ["메인사진","images/work1/main.jpg","메인사진"],
+      ["성형","images/work1/make.jpg","성형"],
+      ["좌측","images/work1/left.jpg","좌측"],
+      ["우측","images/work1/right.jpg","우측"],
+      ["페이셜","images/work1/facial.jpg","페이셜"],
+      ["GIF 예시","images/work1/sample.gif","GIF 예시"],
+      ["기타","images/work1/etc.jpg","기타"]
+    ]
+  },
+  {
+    title:"작품 2",
+    head:"입력",
+    body:"입력",
+    mood:"입력",
+    images:[
+      ["메인사진","images/work2/main.jpg","메인사진"],
+      ["성형","images/work2/make.jpg","성형"],
+      ["좌측","images/work2/left.jpg","좌측"],
+      ["우측","images/work2/right.jpg","우측"],
+      ["페이셜","images/work2/facial.jpg","페이셜"],
+      ["GIF 예시","images/work2/sample.gif","GIF 예시"],
+      ["기타","images/work2/etc.jpg","기타"]
+    ]
+  },
+  {
+    title:"작품 3",
+    head:"입력",
+    body:"입력",
+    mood:"입력",
+    images:[
+      ["메인사진","images/work3/main.jpg","메인사진"],
+      ["성형","images/work3/make.jpg","성형"],
+      ["좌측","images/work3/left.jpg","좌측"],
+      ["우측","images/work3/right.jpg","우측"],
+      ["페이셜","images/work3/facial.jpg","페이셜"],
+      ["GIF 예시","images/work3/sample.gif","GIF 예시"],
+      ["기타","images/work3/etc.jpg","기타"]
+    ]
+  },
+  {
+    title:"작품 4",
+    head:"입력",
+    body:"입력",
+    mood:"입력",
+    images:[
+      ["메인사진","images/work4/main.jpg","메인사진"],
+      ["성형","images/work4/make.jpg","성형"],
+      ["좌측","images/work4/left.jpg","좌측"],
+      ["우측","images/work4/right.jpg","우측"],
+      ["페이셜","images/work4/facial.jpg","페이셜"],
+      ["GIF 예시","images/work4/sample.gif","GIF 예시"],
+      ["기타","images/work4/etc.jpg","기타"]
+    ]
+  },
+  {
+    title:"작품 5",
+    head:"입력",
+    body:"입력",
+    mood:"입력",
+    images:[
+      ["메인사진","images/work5/main.jpg","메인사진"],
+      ["성형","images/work5/make.jpg","성형"],
+      ["좌측","images/work5/left.jpg","좌측"],
+      ["우측","images/work5/right.jpg","우측"],
+      ["페이셜","images/work5/facial.jpg","페이셜"],
+      ["GIF 예시","images/work5/sample.gif","GIF 예시"],
+      ["기타","images/work5/etc.jpg","기타"]
+    ]
+  },
+  {
+    title:"작품 6",
+    head:"입력",
+    body:"입력",
+    mood:"입력",
+    images:[
+      ["메인사진","images/work6/main.jpg","메인사진"],
+      ["성형","images/work6/make.jpg","성형"],
+      ["좌측","images/work6/left.jpg","좌측"],
+      ["우측","images/work6/right.jpg","우측"],
+      ["페이셜","images/work6/facial.jpg","페이셜"],
+      ["GIF 예시","images/work6/sample.gif","GIF 예시"],
+      ["기타","images/work6/etc.jpg","기타"]
+    ]
+  }
+];
+
+const tabs = document.getElementById("tabs");
+const gallery = document.getElementById("gallery");
+const workInfo = document.getElementById("workInfo");
+
+works.forEach((w,i)=>{
+  tabs.innerHTML += `<button id="tab${i}" onclick="showWork(${i})">${w.title}</button>`;
+});
+
+function showWork(index){
+  const w = works[index];
+
+  document.querySelectorAll(".tabs button").forEach(btn=>btn.classList.remove("active"));
+  document.getElementById("tab"+index).classList.add("active");
+
+  workInfo.innerHTML = `
+    <b>${w.title}</b><br>
+    Head : ${w.head} / Body : ${w.body} / 분위기 : ${w.mood}
+  `;
+
+  gallery.innerHTML = "";
+
+  w.images.forEach((img)=>{
+    gallery.innerHTML += `
+      <div class="item">
+        <div class="item-head">${img[0]}</div>
+        <div class="imgbox">
+          <img src="${img[1]}" alt="${img[2]}">
+        </div>
+        <div class="caption">${img[2]}</div>
+      </div>
+    `;
+  });
+}
+
+showWork(0);
+</script>
+
+</body>
+</html>
