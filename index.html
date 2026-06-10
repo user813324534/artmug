@@ -24,22 +24,20 @@ body{
   --gold-soft:#f6edc1;
   --line:#e7d27a;
 }
-.hero,.portfolio,.notice,.footer{
+.hero,.form-area,.notice,.portfolio,.footer{
   border:1px solid var(--gold);
   border-radius:28px;
   background:#fff;
+  margin-bottom:24px;
 }
 .hero{
-  width:100%;
-  margin:0 0 24px;
+  padding:42px 28px;
   text-align:center;
-  padding:46px 20px 42px;
 }
 .badge{
   display:inline-block;
   padding:7px 22px;
   border-radius:999px;
-  background:#fff;
   border:1px solid var(--gold);
   color:#9a7b00;
   font-size:13px;
@@ -47,25 +45,22 @@ body{
   letter-spacing:1px;
 }
 .hero h1{
-  margin:18px 0 10px;
-  font-size:46px;
-  letter-spacing:-1px;
+  margin:18px 0 18px;
+  font-size:30px;
 }
 .hero p{
-  margin:0;
-  color:#6f641f;
-  line-height:1.8;
+  margin:0 auto;
+  max-width:720px;
+  color:#555;
+  line-height:2;
+  font-weight:700;
 }
-.portfolio{
-  padding:28px;
-  margin-bottom:24px;
-}
-.title{
+.section-title{
   font-size:24px;
   font-weight:900;
   margin-bottom:18px;
 }
-.title:before{
+.section-title:before{
   content:"";
   display:inline-block;
   width:5px;
@@ -75,16 +70,82 @@ body{
   margin-right:10px;
   vertical-align:-4px;
 }
-.tabs{
-  white-space:nowrap;
-  overflow-x:auto;
-  padding-bottom:12px;
+.form-area,.notice,.portfolio{
+  padding:28px;
+}
+.copy-box{
+  width:100%;
+  min-height:150px;
+  resize:vertical;
+  padding:18px;
+  border:1px dashed var(--line);
+  border-radius:18px;
+  font-family:inherit;
+  font-size:15px;
+  line-height:1.8;
+}
+.copy-btn{
+  margin-top:12px;
+  padding:10px 22px;
+  border:1px solid var(--gold);
+  border-radius:999px;
+  background:var(--gold);
+  color:#fff;
+  font-weight:900;
+  cursor:pointer;
+}
+.notice{
+  line-height:2;
+  color:#555;
+}
+.avatar-list{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.avatar-card{
+  border:1px solid var(--gold);
+  border-radius:24px;
+  overflow:hidden;
+}
+.avatar-title{
+  width:100%;
+  padding:18px 22px;
+  border:0;
+  background:#fff;
+  color:var(--gold-dark);
+  font-size:20px;
+  font-weight:900;
+  text-align:left;
+  cursor:pointer;
+}
+.avatar-title.active{
+  background:var(--gold);
+  color:#fff;
+}
+.avatar-content{
+  display:none;
+  padding:24px;
+  border-top:1px solid var(--line);
+}
+.avatar-content.open{
+  display:block;
+}
+.work-info{
+  margin-bottom:18px;
+  padding:15px 18px;
+  border:1px dashed var(--line);
+  border-radius:18px;
+  color:#555;
+  line-height:1.8;
+}
+.inner-tabs{
+  text-align:center;
   margin-bottom:18px;
 }
-.tabs button{
-  display:inline-block;
-  margin:4px 6px 4px 0;
-  padding:9px 22px;
+.inner-tabs button{
+  margin:4px;
+  padding:9px 24px;
   border:1px solid var(--gold);
   border-radius:999px;
   background:#fff;
@@ -92,280 +153,281 @@ body{
   font-weight:900;
   cursor:pointer;
 }
-.tabs button.active{
+.inner-tabs button.active{
   background:var(--gold);
   color:#fff;
 }
-.work-info{
-  margin-bottom:16px;
-  padding:15px 18px;
-  border:1px dashed var(--line);
-  border-radius:18px;
-  background:#fff;
-  color:#555;
-  line-height:1.8;
+.slider{
+  display:none;
+  text-align:center;
 }
-.gallery{
-  overflow-x:auto;
-  white-space:nowrap;
-  padding:4px 0 20px;
+.slider.active{
+  display:block;
 }
-.item{
-  display:inline-block;
-  width:360px;
-  margin-right:18px;
+.slide-view{
+  position:relative;
+  max-width:620px;
+  margin:0 auto;
+}
+.slide-view img{
+  width:100%;
+  max-height:620px;
+  object-fit:contain;
+  display:block;
+  margin:0 auto;
   border:1px solid var(--gold);
-  border-radius:22px;
-  overflow:hidden;
+  border-radius:24px;
   background:#fff;
-  vertical-align:top;
 }
-.item-head{
-  padding:12px 16px;
+.slide-caption{
+  margin-top:12px;
+  color:#777;
+  font-weight:900;
+}
+.slide-controls{
+  margin-top:14px;
+}
+.slide-controls button{
+  margin:4px;
+  padding:9px 18px;
+  border:1px solid var(--gold);
+  border-radius:999px;
   background:#fff;
   color:var(--gold-dark);
   font-weight:900;
-  border-bottom:1px solid var(--line);
-}
-.imgbox{
-  width:100%;
-  height:360px;
-  background:#fff;
-  overflow:hidden;
-}
-.imgbox img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  display:block;
-}
-.caption{
-  padding:12px;
-  text-align:center;
-  color:#777;
-  font-weight:800;
-  border-top:1px solid var(--gold-soft);
-}
-.sold-badge{
-  display:inline-block;
-  margin-left:8px;
-  padding:3px 10px;
-  border-radius:999px;
-  background:#222;
-  color:#fff;
-  font-size:12px;
-  font-weight:900;
-  vertical-align:2px;
-}
-.notice{
-  margin-top:24px;
-  padding:26px;
-  line-height:2;
-  color:#555;
+  cursor:pointer;
 }
 .footer{
-  margin-top:24px;
   text-align:center;
-  color:#222;
   padding:38px 20px;
 }
 .footer h2{margin:0 0 8px}
 .footer p{margin:0;color:#666}
 
 @media(max-width:700px){
-  .hero h1{font-size:34px}
-  .portfolio{padding:20px}
-  .item{width:320px}
-  .imgbox{height:320px}
+  .hero h1{font-size:24px}
+  .form-area,.notice,.portfolio{padding:20px}
+  .avatar-content{padding:18px}
+  .slide-view img{max-height:430px}
 }
 </style>
 </head>
 
 <body>
-
 <div class="wrap">
 
   <div class="hero">
     <div class="badge">MARONG ORIGINAL</div>
-    <h1>개인작 아바타 판매</h1>
-    <p>작품을 선택한 뒤, 아래 박스 안에서 좌우로 넘겨 전체 이미지를 확인해주세요.</p>
+    <h1>작가 인사말</h1>
+    <p>
+      안녕하세요! 마롱입니다.<br>
+      해당 커미션은 미감이 부족하신 분들에게 완성된 아바타를 판매하는 커미션입니다!<br>
+      제가 사용한다는 마음으로 아주 예쁘게 만들고 있으니 많은 관심 부탁드립니다!
+    </p>
   </div>
 
-  <div class="portfolio">
-    <div class="title">분양중</div>
-    <div class="tabs" id="availableTabs"></div>
-    <div class="work-info" id="availableInfo"></div>
-    <div class="gallery" id="availableGallery"></div>
-  </div>
+  <div class="form-area">
+    <div class="section-title">신청양식</div>
+    <textarea class="copy-box" id="orderForm">1. 방송닉네임 + 방송국 프로필 링크 :
 
-  <div class="portfolio">
-    <div class="title">분양완료 <span class="sold-badge">SOLD OUT</span></div>
-    <div class="tabs" id="soldTabs"></div>
-    <div class="work-info" id="soldInfo"></div>
-    <div class="gallery" id="soldGallery"></div>
+2. 원하시는 작품 번호 :
+
+3. 문의사항 :</textarea>
+    <button class="copy-btn" onclick="copyForm()">신청양식 복사하기</button>
   </div>
 
   <div class="notice">
-    1. 본 상품은 개인작 완성품 판매입니다.<br>
-    2. 구매 전 작품 번호와 이미지를 반드시 확인해주세요.<br>
-    3. GIF / JPG / PNG 이미지 모두 사용 가능합니다.<br>
-    4. 디지털 상품 특성상 다운로드 후 환불이 어렵습니다.<br>
-    5. 파일의 무단 공유, 재배포, 재판매를 금지합니다.
+    <div class="section-title">안내사항</div>
+    1. 본 커미션은 뚜따로 제작된 완성형 아바타를 판매하는 커미션입니다.<br>
+    2. 구매하신 아바타에 사용된 모든 파츠는 본인것도 직접 다 구매 해주셔야 합니다.<br>
+    3. booth 구매내역까지 모두 확인 후에 파일이 제공됩니다.<br>
+    4. 추가 뚜따 작업 가능합니다.
+  </div>
+
+  <div class="portfolio">
+    <div class="section-title">개인작 아바타 판매</div>
+    <div class="avatar-list" id="avatarList"></div>
   </div>
 
   <div class="footer">
     <h2>Thank you!</h2>
-    <p>원하는 작품 번호를 확인 후 구매해주세요.</p>
+    <p>원하는 작품 번호를 확인 후 문의해주세요.</p>
   </div>
 
 </div>
 
 <script>
-const availableWorks = [
+const BASE = "https://user813324534.github.io/artmug/";
+
+const avatarWorks = [
   {
-    title:"작품 1",
+    number:"3번",
+    title:"3번 작품",
+    head:"입력",
+    body:"입력",
+    mood:"입력",
+    images:[
+      ["메인사진", BASE+"images/test.png"],
+      ["좌측", BASE+"images/test.png"],
+      ["우측", BASE+"images/test.png"]
+    ],
+    facial:[
+      ["기본 표정", BASE+"images/test.png"],
+      ["웃는 표정", BASE+"images/test.png"],
+      ["화난 표정", BASE+"images/test.png"]
+    ],
+    function:[
+      ["기능 설명 1", BASE+"images/test.png"],
+      ["기능 설명 2", BASE+"images/test.png"]
+    ]
+  },
+  {
+    number:"2번",
+    title:"2번 작품",
+    head:"입력",
+    body:"입력",
+    mood:"입력",
+    images:[
+      ["메인사진", BASE+"images/test.png"],
+      ["좌측", BASE+"images/test.png"]
+    ],
+    facial:[
+      ["페이셜", BASE+"images/test.png"]
+    ],
+    function:[
+      ["기능", BASE+"images/test.png"]
+    ]
+  },
+  {
+    number:"1번",
+    title:"1번 작품",
     head:"밀티나",
     body:"시나노",
     mood:"러블리 / 노랑 / 데일리",
     images:[
-      ["메인사진","images/test.png","메인사진"],
-      ["성형","images/test.png","성형"],
-      ["좌측","images/test.png","좌측"],
-      ["우측","images/test.png","우측"],
-      ["페이셜","images/test.png","페이셜"],
-      ["GIF 예시","images/test.png","GIF 예시"],
-      ["기타","images/test.png","기타"]
-    ]
-  },
-  {
-    title:"작품 2",
-    head:"입력",
-    body:"입력",
-    mood:"입력",
-    images:[
-      ["메인사진","images/test.png","메인사진"],
-      ["성형","images/test.png","성형"],
-      ["좌측","images/test.png","좌측"],
-      ["우측","images/test.png","우측"],
-      ["페이셜","images/test.png","페이셜"],
-      ["GIF 예시","images/test.png","GIF 예시"],
-      ["기타","images/test.png","기타"]
-    ]
-  },
-  {
-    title:"작품 3",
-    head:"입력",
-    body:"입력",
-    mood:"입력",
-    images:[
-      ["메인사진","images/test.png","메인사진"],
-      ["성형","images/test.png","성형"],
-      ["좌측","images/test.png","좌측"],
-      ["우측","images/test.png","우측"],
-      ["페이셜","images/test.png","페이셜"],
-      ["GIF 예시","images/test.png","GIF 예시"],
-      ["기타","images/test.png","기타"]
-    ]
-  },
-  {
-    title:"작품 4",
-    head:"입력",
-    body:"입력",
-    mood:"입력",
-    images:[
-      ["메인사진","images/work4/main.jpg","메인사진"],
-      ["성형","images/work4/make.jpg","성형"],
-      ["좌측","images/work4/left.jpg","좌측"],
-      ["우측","images/work4/right.jpg","우측"],
-      ["페이셜","images/work4/facial.jpg","페이셜"],
-      ["GIF 예시","images/work4/sample.gif","GIF 예시"],
-      ["기타","images/work4/etc.jpg","기타"]
+      ["메인사진", BASE+"images/test.png"],
+      ["성형", BASE+"images/test.png"],
+      ["좌측", BASE+"images/test.png"],
+      ["우측", BASE+"images/test.png"]
+    ],
+    facial:[
+      ["페이셜 1", BASE+"images/test.png"],
+      ["페이셜 2", BASE+"images/test.png"]
+    ],
+    function:[
+      ["기능 1", BASE+"images/test.png"],
+      ["기능 2", BASE+"images/test.png"]
     ]
   }
 ];
 
-const soldWorks = [
-  {
-    title:"완료 1",
-    head:"입력",
-    body:"입력",
-    mood:"분양 완료",
-    images:[
-      ["메인사진","images/sold1/main.jpg","메인사진"],
-      ["성형","images/sold1/make.jpg","성형"],
-      ["좌측","images/sold1/left.jpg","좌측"],
-      ["우측","images/sold1/right.jpg","우측"],
-      ["페이셜","images/sold1/facial.jpg","페이셜"],
-      ["GIF 예시","images/sold1/sample.gif","GIF 예시"],
-      ["기타","images/sold1/etc.jpg","기타"]
-    ]
-  },
-  {
-    title:"완료 2",
-    head:"입력",
-    body:"입력",
-    mood:"분양 완료",
-    images:[
-      ["메인사진","images/sold2/main.jpg","메인사진"],
-      ["성형","images/sold2/make.jpg","성형"],
-      ["좌측","images/sold2/left.jpg","좌측"],
-      ["우측","images/sold2/right.jpg","우측"],
-      ["페이셜","images/sold2/facial.jpg","페이셜"],
-      ["GIF 예시","images/sold2/sample.gif","GIF 예시"],
-      ["기타","images/sold2/etc.jpg","기타"]
-    ]
-  }
-];
+const slideState = {};
 
-function setupPortfolio(works, tabsId, infoId, galleryId, prefix, sold){
-  const tabs = document.getElementById(tabsId);
-  const info = document.getElementById(infoId);
-  const gallery = document.getElementById(galleryId);
+function renderWorks(){
+  const list = document.getElementById("avatarList");
+  list.innerHTML = "";
 
-  works.forEach((w,i)=>{
-    tabs.innerHTML += `<button id="${prefix}tab${i}" onclick="showPortfolio('${prefix}',${i})">${w.title}</button>`;
-  });
+  avatarWorks.forEach((work, index)=>{
+    slideState[index] = { tab:"images", slide:0 };
 
-  window[prefix+"Works"] = works;
-  window[prefix+"Info"] = info;
-  window[prefix+"Gallery"] = gallery;
-  window[prefix+"Sold"] = sold;
+    list.innerHTML += `
+      <div class="avatar-card">
+        <button class="avatar-title" onclick="toggleWork(${index})">
+          ${work.number} ${work.title}
+        </button>
 
-  showPortfolio(prefix,0);
-}
+        <div class="avatar-content" id="content${index}">
+          <div class="work-info">
+            <b>${work.number} ${work.title}</b><br>
+            Head : ${work.head} / Body : ${work.body} / 분위기 : ${work.mood}
+          </div>
 
-function showPortfolio(prefix,index){
-  const works = window[prefix+"Works"];
-  const info = window[prefix+"Info"];
-  const gallery = window[prefix+"Gallery"];
-  const sold = window[prefix+"Sold"];
-  const w = works[index];
+          <div class="inner-tabs">
+            <button id="tab${index}_images" onclick="showTab(${index}, 'images')">이미지</button>
+            <button id="tab${index}_facial" onclick="showTab(${index}, 'facial')">페이셜</button>
+            <button id="tab${index}_function" onclick="showTab(${index}, 'function')">기능</button>
+          </div>
 
-  document.querySelectorAll(`[id^="${prefix}tab"]`).forEach(btn=>btn.classList.remove("active"));
-  document.getElementById(prefix+"tab"+index).classList.add("active");
-
-  info.innerHTML = `
-    <b>${w.title}</b>${sold ? ' <span class="sold-badge">분양완료</span>' : ''}<br>
-    Head : ${w.head} / Body : ${w.body} / 분위기 : ${w.mood}
-  `;
-
-  gallery.innerHTML = "";
-
-  w.images.forEach((img)=>{
-    gallery.innerHTML += `
-      <div class="item">
-        <div class="item-head">${img[0]}</div>
-        <div class="imgbox">
-          <img src="${img[1]}" alt="${img[2]}">
+          <div class="slider active" id="slider${index}">
+            <div class="slide-view">
+              <img id="img${index}" src="" alt="">
+              <div class="slide-caption" id="caption${index}"></div>
+            </div>
+            <div class="slide-controls">
+              <button onclick="prevSlide(${index})">이전</button>
+              <button onclick="nextSlide(${index})">다음</button>
+            </div>
+          </div>
         </div>
-        <div class="caption">${img[2]}</div>
       </div>
     `;
   });
+
+  toggleWork(0);
 }
 
-setupPortfolio(availableWorks,"availableTabs","availableInfo","availableGallery","available",false);
-setupPortfolio(soldWorks,"soldTabs","soldInfo","soldGallery","sold",true);
+function toggleWork(index){
+  document.querySelectorAll(".avatar-content").forEach(el=>el.classList.remove("open"));
+  document.querySelectorAll(".avatar-title").forEach(el=>el.classList.remove("active"));
+
+  document.getElementById("content"+index).classList.add("open");
+  document.querySelectorAll(".avatar-title")[index].classList.add("active");
+
+  showTab(index, slideState[index].tab);
+}
+
+function showTab(index, tab){
+  slideState[index].tab = tab;
+  slideState[index].slide = 0;
+
+  ["images","facial","function"].forEach(t=>{
+    document.getElementById(`tab${index}_${t}`).classList.remove("active");
+  });
+
+  document.getElementById(`tab${index}_${tab}`).classList.add("active");
+  updateSlide(index);
+}
+
+function updateSlide(index){
+  const work = avatarWorks[index];
+  const state = slideState[index];
+  const list = work[state.tab];
+
+  if(!list || list.length === 0) return;
+
+  const current = list[state.slide];
+
+  document.getElementById("img"+index).src = current[1];
+  document.getElementById("img"+index).alt = current[0];
+  document.getElementById("caption"+index).innerText =
+    `${current[0]} (${state.slide + 1} / ${list.length})`;
+}
+
+function nextSlide(index){
+  const state = slideState[index];
+  const list = avatarWorks[index][state.tab];
+
+  state.slide = (state.slide + 1) % list.length;
+  updateSlide(index);
+}
+
+function prevSlide(index){
+  const state = slideState[index];
+  const list = avatarWorks[index][state.tab];
+
+  state.slide = (state.slide - 1 + list.length) % list.length;
+  updateSlide(index);
+}
+
+function copyForm(){
+  const form = document.getElementById("orderForm");
+  form.select();
+  form.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  alert("신청양식이 복사되었습니다!");
+}
+
+renderWorks();
 </script>
 
 </body>
